@@ -1,0 +1,63 @@
+/* Custom CSS to resemble WordPress */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #0073aa;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sidebar {
+    flex: 1;
+    max-width: 300px;
+    background-color: #f9f9f9;
+    padding: 15px;
+}
+
+.content {
+    flex: 3;
+    background-color: #fff;
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #0073aa;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
