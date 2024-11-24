@@ -3,7 +3,7 @@ import { Link } from "@inertiajs/vue3";
 import MainLayouts from "@/Layouts/MainLayouts.vue";
 import AboutUs from "@/Assets/AboutUs.avif";
 import { ref } from "vue";
-import CardContent from "@/Components/CardContent.vue";
+import FoodContent from "@/Components/FoodContent.vue";
 import TestiContent from "@/Components/TestiContent.vue";
 import TersediaContent from "@/Components/TersediaContent.vue";
 
@@ -19,7 +19,7 @@ import Testi4 from "@/Assets/testi/pael.jpg";
 
 import star from "@/Assets/star.svg";
 
-const Cards = ref([
+const Foods = ref([
     {
         img: Kebab1,
         title: "Kebab Muwani Gilani",
@@ -215,10 +215,10 @@ const Testi = ref([
 
             <!-- CARD -->
             <div class="grid grid-cols-4 gap-10 pb-12">
-                <CardContent
-                    v-for="(card, index) in Cards"
+                <FoodContent
+                    v-for="(food, index) in Foods"
                     :key="index"
-                    :card="card"
+                    :food="food"
                     loading="lazy"
                 />
             </div>
