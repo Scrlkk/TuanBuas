@@ -13,6 +13,11 @@ Route::get('/menu', function () {
     return Inertia::render('MenuViews');
 });
 
+
+
+
+
+// // Tidak Dipakai
 // Route::get('/dashboard', function () {
 //     return Inertia::render('Dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');

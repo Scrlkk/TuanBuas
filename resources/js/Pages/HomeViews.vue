@@ -22,28 +22,28 @@ import star from "@/Assets/star.svg";
 const Foods = ref([
     {
         img: Kebab1,
-        title: "Kebab Muwani Gilani",
+        title: "Kebab Gurih Aceh",
         description:
             "Lorem ipsum odor amet, consectetuer adipiscing elit. Montes auctor sagittis hac torquent a nullam mi platea.",
         price: "20.000",
     },
     {
         img: Kebab2,
-        title: "Kebab Mas Rehan",
+        title: "Kebab Spesial Event",
         description:
             "Lorem ipsum odor amet, consectetuer adipiscing elit. Montes auctor sagittis hac torquent a nullam mi platea.",
         price: "17.000",
     },
     {
         img: Kebab3,
-        title: "Kebab Ambaffi Wuenak",
+        title: "Kebab Original",
         description:
             "Lorem ipsum odor amet, consectetuer adipiscing elit. Montes auctor sagittis hac torquent a nullam mi platea.",
         price: "30.000",
     },
     {
         img: Kebab4,
-        title: "Kebab Ngawi blukutuk",
+        title: "Kebab Spesial Paparaffi",
         description:
             "Lorem ipsum odor amet, consectetuer adipiscing elit. Montes auctor sagittis hac torquent a nullam mi platea.",
         price: "50.000",
@@ -173,7 +173,7 @@ const Testi = ref([
                     </div>
 
                     <div
-                        class="group absolute font max-w-md bg-gray-200 p-12 -right-44 font-quicksand hover:bg-red-600 hover:text-white hover:scale-110 transition duration-300 ease-in-out"
+                        class="group absolute max-w-md bg-zinc-200 p-12 -right-44 font-quicksand hover:bg-red-600 hover:text-white hover:scale-110 transition duration-300 ease-in-out"
                     >
                         <h1 class="font-bold text-xl">About Us,</h1>
                         <h1 class="italic leading-snug py-4">
