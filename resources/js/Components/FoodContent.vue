@@ -1,7 +1,7 @@
 <script setup>
 defineProps({
-    food: {
-        type: Object,
+    foods: {
+        type: Array,
         required: true,
     },
 });
@@ -23,7 +23,7 @@ defineProps({
 
         <!-- DESC -->
         <div
-            class="p-5 px-6 overflow-hidden bg-gray-200 rounded-b-xl group-hover:bg-red-600 group-hover:text-white transition duration-200 ease-in-out"
+            class="p-5 px-6 overflow-hidden bg-zinc-200 rounded-b-xl group-hover:bg-red-600 group-hover:text-white transition duration-200 ease-in-out"
         >
             <h1 class="text-[23px] pb-2 font-bold font-raleway">
                 {{ food.title }}

@@ -42,7 +42,7 @@ const Links = [
 
         <!-- ORDER -->
         <a
-            href="https://gofood.co.id/search?q=Kebab"
+            href="https://wa.me/6282138540196?text=Halo%20kak%2C%20saya%20ingin%20memesan%20Kebab%21"
             target="_blank"
             rel="noopener noreferrer"
             className="p-5 py-4 px-8 bg-red-600 rounded-[26px] font-quicksand font-bold text-white hover:bg-green-500 hover:scale-95 transition duration-150 ease-in-out"
