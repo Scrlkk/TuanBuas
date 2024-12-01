@@ -27,7 +27,7 @@ class FoodsResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-building-storefront';
     protected static ?string $navigationLabel = 'Manage Foods';
     protected static ?string $label = 'Manage Foods';
-    protected static ?string $navigationGroup = 'Admin';
+    protected static ?string $navigationGroup = 'Mangement';
     protected static ?string $slug = 'foods';
 
 
