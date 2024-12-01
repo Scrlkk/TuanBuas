@@ -15,6 +15,3 @@ Route::get('/menu', function () {
 
 Route::get('/', [FoodController::class, 'index'])->name('home');
 Route::get('/menu', [MenuController::class, 'index'])->name('menu');
-
-
-require __DIR__ . '/auth.php';

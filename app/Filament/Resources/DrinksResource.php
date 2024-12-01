@@ -27,7 +27,7 @@ class DrinksResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-building-storefront';
     protected static ?string $navigationLabel = 'Manage Drinks';
     protected static ?string $label = 'Manage Drinks';
-    protected static ?string $navigationGroup = 'Admin';
+    protected static ?string $navigationGroup = 'Mangement';
     protected static ?string $slug = 'drinks';
 
     public static function form(Form $form): Form

@@ -8,20 +8,24 @@ use Filament\Panel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Filament\Models\Contracts\HasAvatar;
+use Illuminate\Support\Facades\Storage;
 
-class User extends Authenticatable implements FilamentUser
+class User extends Authenticatable implements HasAvatar
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
+
     public function canAccessPanel(Panel $panel): bool
     {
-        return $this->email === 'admin@example.com';
+        return $this->email;
     }
 
-
-
-
+    public function getFilamentAvatarUrl(): ?string
+    {
+        return $this->avatar_url ? Storage::url("$this->avatar_url") : null;
+    }
 
 
     /**
@@ -33,6 +37,7 @@ class User extends Authenticatable implements FilamentUser
         'name',
         'email',
         'password',
+        'avatar_url',
     ];
 
     /**

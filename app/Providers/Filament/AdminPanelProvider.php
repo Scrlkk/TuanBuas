@@ -20,6 +20,12 @@ use Illuminate\View\Middleware\ShareErrorsFromSession;
 
 use Filament\View\PanelsRenderHook;
 use Illuminate\Support\Facades\Blade;
+use Joaopaulolndev\FilamentEditProfile\FilamentEditProfilePlugin;
+use Filament\Navigation\MenuItem;
+use Joaopaulolndev\FilamentEditProfile\Pages\EditProfilePage;
+use Illuminate\Support\Facades\Auth;
+
+
 class AdminPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
@@ -27,11 +33,12 @@ class AdminPanelProvider extends PanelProvider
         return $panel
             ->default()
             ->id('admin')
-            ->path('admin')
+            ->path('admin-kebabpaparaffi')
             ->login()
             ->colors([
                 'primary' => Color::Amber,
             ])
+            ->registration()
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
@@ -71,6 +78,27 @@ class AdminPanelProvider extends PanelProvider
             Home
         </a>
     ');
-            });
+            })
+            ->plugins([
+                FilamentEditProfilePlugin::make()
+                    ->slug('admin-profile')
+                    ->setTitle('Admin Profile')
+                    ->setNavigationLabel('Admin Profile')
+                    ->setIcon('heroicon-o-user')
+                    ->shouldShowAvatarForm(
+                        value: true,
+                        directory: 'avatars',
+                        rules: 'mimes:jpeg,png|max:1024'
+                    )
+            ])
+            ->userMenuItems([
+                'profile' => MenuItem::make()
+                    ->label(fn() => Auth::user()->name)
+                    ->url(fn(): string => EditProfilePage::getUrl())
+                    ->icon('heroicon-o-user')
+            ])
+        ;
+
+
     }
 }
