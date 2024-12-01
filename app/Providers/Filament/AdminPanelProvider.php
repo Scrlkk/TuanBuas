@@ -18,6 +18,8 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 
+use Filament\View\PanelsRenderHook;
+use Illuminate\Support\Facades\Blade;
 class AdminPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
@@ -53,6 +55,22 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ]);
+            ])
+            ->renderHook(PanelsRenderHook::SIDEBAR_NAV_START, function () {
+                return Blade::render('
+        <style>
+            .hover-effect {
+                transition: transform 300ms ease-in-out, background-color 300ms ease-in-out;
+            }
+            .hover-effect:hover {
+                background-color: #FFFFFF;
+                transform: scale(0.95);
+            }
+        </style>
+        <a href="/" class="text-lg hover-effect" style="display: block; text-align: center; background-color: #D97706; color: white; padding: 7px; border-radius: 10px;">
+            Home
+        </a>
+    ');
+            });
     }
 }

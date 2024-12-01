@@ -1,7 +1,7 @@
 <script setup>
 defineProps({
-    foods: {
-        type: Array,
+    food: {
+        type: Object,
         required: true,
     },
 });
@@ -15,8 +15,8 @@ defineProps({
         <!-- IMAGE -->
         <div class="w-[317px] h-[180px] rounded-t-xl overflow-hidden">
             <img
-                :src="food.img"
-                alt="kebab"
+                :src="`/storage/${food.image} `"
+                alt="Menu Food"
                 class="object-cover w-full h-full"
             />
         </div>
@@ -28,9 +28,8 @@ defineProps({
             <h1 class="text-[23px] pb-2 font-bold font-raleway">
                 {{ food.title }}
             </h1>
-            <p class="h-[6rem] tracking-tight">
-                {{ food.description }}
-            </p>
+            <p class="h-[6rem] tracking-tight" v-html="food.description"></p>
+
             <h2
                 class="font-bold tracking-tight font-montserrat text-xl text-red-600 group-hover:text-white transition duration-200 ease-in-out"
             >

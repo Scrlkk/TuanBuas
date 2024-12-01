@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\FoodsResource\Pages;
-use App\Filament\Resources\FoodsResource\RelationManagers;
-use App\Models\Food;
+use App\Filament\Resources\DrinksResource\Pages;
+use App\Filament\Resources\DrinksResource\RelationManagers;
+use App\Models\Drink;
 use Doctrine\DBAL\Schema\Column;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
@@ -20,16 +20,15 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Nette\Utils\Html;
 
-class FoodsResource extends Resource
+class DrinksResource extends Resource
 {
-    protected static ?string $model = Food::class;
+    protected static ?string $model = Drink::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-building-storefront';
-    protected static ?string $navigationLabel = 'Manage Foods';
-    protected static ?string $label = 'Manage Foods';
+    protected static ?string $navigationLabel = 'Manage Drinks';
+    protected static ?string $label = 'Manage Drinks';
     protected static ?string $navigationGroup = 'Admin';
-    protected static ?string $slug = 'foods';
-
+    protected static ?string $slug = 'drinks';
 
     public static function form(Form $form): Form
     {
@@ -47,14 +46,12 @@ class FoodsResource extends Resource
                 FileUpload::make('image')
                     ->required()
                     ->image()
-                    ->directory('foods')
+                    ->directory('drinks')
                     ->disk('public')
                     ->maxSize(15360)
-                    ->label('Food Image')
-
+                    ->label('Drink Image')
             ])
             ->columns(2);
-
     }
 
     public static function table(Table $table): Table
@@ -65,7 +62,7 @@ class FoodsResource extends Resource
                     ->width(140)
                     ->height(100)
                     ->disk('public')
-                    ->label('Food Image'),
+                    ->label('Drink Image'),
                 TextColumn::make('title')
                     ->searchable(),
                 TextColumn::make('price')
@@ -100,10 +97,9 @@ class FoodsResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListFoods::route('/'),
-            'create' => Pages\CreateFoods::route('/create'),
-            'edit' => Pages\EditFoods::route('/{record}/edit'),
+            'index' => Pages\ListDrinks::route('/'),
+            'create' => Pages\CreateDrinks::route('/create'),
+            'edit' => Pages\EditDrinks::route('/{record}/edit'),
         ];
     }
-
 }

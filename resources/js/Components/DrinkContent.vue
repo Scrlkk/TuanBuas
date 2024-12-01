@@ -15,8 +15,8 @@ defineProps({
         <!-- IMAGE -->
         <div class="w-[317px] h-[180px] rounded-t-xl overflow-hidden">
             <img
-                :src="drink.img"
-                alt="kebab"
+                :src="`/storage/${drink.image}`"
+                alt="Minuman"
                 class="object-cover w-full h-full"
             />
         </div>
@@ -28,9 +28,7 @@ defineProps({
             <h1 class="text-[23px] pb-2 font-bold font-raleway">
                 {{ drink.title }}
             </h1>
-            <p class="h-[6rem] tracking-tight">
-                {{ drink.description }}
-            </p>
+            <p class="h-[6rem] tracking-tight" v-html="drink.description"></p>
             <h2
                 class="font-bold tracking-tight font-montserrat text-xl text-red-600 group-hover:text-white transition duration-200 ease-in-out"
             >

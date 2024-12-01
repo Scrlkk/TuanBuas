@@ -1,54 +1,24 @@
 <script setup>
 import { Link } from "@inertiajs/vue3";
+import { ref } from "vue";
 import MainLayouts from "@/Layouts/MainLayouts.vue";
 import AboutUs from "@/Assets/AboutUs.avif";
-import { ref } from "vue";
 import FoodContent from "@/Components/FoodContent.vue";
 import TestiContent from "@/Components/TestiContent.vue";
 import TersediaContent from "@/Components/TersediaContent.vue";
 
-import Kebab1 from "@/Assets/card/kebab.png";
-import Kebab2 from "@/Assets/card/kebab2.jpg";
-import Kebab3 from "@/Assets/card/kebab3.jpg";
-import Kebab4 from "@/Assets/card/kebab4.jpg";
+import star from "@/Assets/star.svg";
 
 import Testi1 from "@/Assets/testi/tsaqip.jpg";
 import Testi2 from "@/Assets/testi/jul.jpg";
 import Testi3 from "@/Assets/testi/padil.jpg";
-import Testi4 from "@/Assets/testi/pael.jpg";
 
-import star from "@/Assets/star.svg";
-
-const Foods = ref([
-    {
-        img: Kebab1,
-        title: "Kebab Gurih Aceh",
-        description:
-            "Lorem ipsum odor amet, consectetuer adipiscing elit. Montes auctor sagittis hac torquent a nullam mi platea.",
-        price: "20.000",
+defineProps({
+    foods: {
+        type: Array,
+        required: true,
     },
-    {
-        img: Kebab2,
-        title: "Kebab Spesial Event",
-        description:
-            "Lorem ipsum odor amet, consectetuer adipiscing elit. Montes auctor sagittis hac torquent a nullam mi platea.",
-        price: "17.000",
-    },
-    {
-        img: Kebab3,
-        title: "Kebab Original",
-        description:
-            "Lorem ipsum odor amet, consectetuer adipiscing elit. Montes auctor sagittis hac torquent a nullam mi platea.",
-        price: "30.000",
-    },
-    {
-        img: Kebab4,
-        title: "Kebab Spesial Paparaffi",
-        description:
-            "Lorem ipsum odor amet, consectetuer adipiscing elit. Montes auctor sagittis hac torquent a nullam mi platea.",
-        price: "50.000",
-    },
-]);
+});
 
 const Testi = ref([
     {
@@ -216,8 +186,8 @@ const Testi = ref([
             <!-- CARD -->
             <div class="grid grid-cols-4 gap-10 pb-12">
                 <FoodContent
-                    v-for="(food, index) in Foods"
-                    :key="index"
+                    v-for="food in foods"
+                    :key="food.id"
                     :food="food"
                     loading="lazy"
                 />
