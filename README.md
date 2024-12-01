@@ -7,11 +7,12 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-##TUGAS MATKUL MPTI - Kebabpaparaffi
+## TUGAS MATKUL MPTI - Kebabpaparaffi
 
-#Anggota
-- Naufal Tsqif Athala I. (V3423068)
-- Raffi Atalla Natha A. (V3423071)
-- Satria Pambingkas (V3423080)
-- Sheva Azki Reza (V3423081)
-- Tengku Kaisar Akbar Y. (V3423084)
+# Anggota
+
+<span style="color: red;">Naufal Tsqif Athala I. (V3423068)</span>  
+<span style="color: blue;">Raffi Atalla Natha A. (V3423071)</span>  
+<span style="color: green;">Satria Pambingkas (V3423080)</span>  
+<span style="color: orange;">Sheva Azki Reza (V3423081)</span>  
+<span style="color: purple;">Tengku Kaisar Akbar Y. (V3423084)</span>
